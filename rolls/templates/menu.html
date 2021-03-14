@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Cosa desideri ordinare?</h1>
+    <hr>
+        <div class="row">
+            {% for roll in rolls %}
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <button class="btn btn-primary">Aggiungi</button>
+                        <img src="{{roll.image.url}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <h5 class="card-title">{{roll.name}} Roll</h5>
+                        <p class="card-text">€{{roll.price}}</p>
+                        <button class="btn btn-outline-danger">Elimina</a>
+                        </div>
+                    </div>                
+                </div>
+            {% endfor %}
+        </div>
+{% endblock %}
